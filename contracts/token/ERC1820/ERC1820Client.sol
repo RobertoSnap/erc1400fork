@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.3;
 
 contract ERC1820Registry {
     function setInterfaceImplementer(
@@ -21,7 +21,7 @@ contract ERC1820Client {
     ); */
     // Skyfri change 3/4/20 RPE
     ERC1820Registry constant ERC1820REGISTRY = ERC1820Registry(
-        0xFa240645e93Eb1C5eB14780d494F4BBC5f51b7D3
+        0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24
     );
 
     function setInterfaceImplementation(

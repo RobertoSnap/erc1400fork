@@ -4,10 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "types": "npx buidler typechain",
+    "compile": "npx buidler compile",
+    "deploy:1820": "npx buidler run scripts/deploy/erc1820.ts",
+    "deploy:1400": "npx buidler run --network sandaker scripts/deploy/captable-blockchangers.ts",
+    "deploy:blockchangers": "npx buidler run --network sandaker scripts/deploy/captable-blockchangers.ts"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "erc1400",
+    "cloudless",
+    "skyfri"
+  ],
+  "author": "Robertosnap",
   "license": "ISC",
   "devDependencies": {
     "@nomiclabs/buidler": "^1.2.0",
@@ -17,17 +25,18 @@
     "@types/chai": "^4.2.10",
     "@types/mocha": "^7.0.2",
     "@types/node": "^13.7.7",
+    "buidler-gas-reporter": "^0.1.3",
+    "buidler-typechain": "^0.0.5",
     "chai": "^4.2.0",
     "ethereum-waffle": "^2.3.2",
     "ethers": "^4.0.45",
-    "ts-node": "^8.6.2",
-    "typechain-target-truffle": "^1.0.2",
-    "typescript": "^3.8.3",
-    "typechain-target-web3-v1": "^1.0.4",
-    "buidler-typechain": "^0.0.5",
     "ts-generator": "0.0.8",
+    "ts-node": "^8.6.2",
     "typechain": "^1.0.5",
-    "typechain-target-ethers": "^1.0.3"
+    "typechain-target-ethers": "^1.0.3",
+    "typechain-target-truffle": "^1.0.2",
+    "typechain-target-web3-v1": "^1.0.4",
+    "typescript": "^3.8.3"
   },
   "dependencies": {}
 }

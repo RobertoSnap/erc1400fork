@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.3;
 
 import "./ERC1400Raw.sol";
 import "@openzeppelin/contracts/access/roles/MinterRole.sol";

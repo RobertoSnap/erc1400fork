@@ -3,13 +3,20 @@ import { BuidlerConfig, usePlugin } from "@nomiclabs/buidler/config";
 usePlugin("@nomiclabs/buidler-waffle");
 usePlugin("@nomiclabs/buidler-ethers");
 usePlugin("buidler-typechain");
-
+usePlugin("buidler-gas-reporter");
 
 const config: BuidlerConfig = {
-    defaultNetwork: "sandaker",
+    defaultNetwork: "buidlerevm",
     networks: {
         gasless: {
             url: 'http://localhost:7545',
+        },
+        local: {
+            url: " http://127.0.0.1:8545/"
+        },
+        buidlerevm: {
+            gas: "auto",
+            blockGasLimit: 800000000
         },
         sandaker: {
             url: 'https://e0mcmsxgkk:zdh5CFSvVXzCUF8e3-QbN5tiVTBuekQYFgNxbMSJ68c@e0fsgog2j5-e0h0jkl669-rpc.de0-aws.kaleido.io',
@@ -20,13 +27,22 @@ const config: BuidlerConfig = {
         },
     },
     solc: {
-        version: "0.5.0",
-        evmVersion: "byzantium"
+        version: "0.5.3",
+        optimizer: {
+            enabled: true,
+            runs: 200
+        }
+        // evmVersion: "byzantium"
+
     },
-    // typechain: {
-    //     outDir: "src/types",
-    //     target: "ethers"
-    // }
+    typechain: {
+        outDir: "dist/types",
+        target: "ethers"
+    },
+    gasReporter: {
+        currency: 'NOK',
+        gasPrice: 5
+    }
 };
 
 export default config;
