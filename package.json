@@ -7,8 +7,9 @@
     "types": "npx buidler typechain",
     "compile": "npx buidler compile",
     "deploy:1820": "npx buidler run scripts/deploy/erc1820.ts",
-    "deploy:1400": "npx buidler run --network sandaker scripts/deploy/captable-blockchangers.ts",
-    "deploy:blockchangers": "npx buidler run --network sandaker scripts/deploy/captable-blockchangers.ts"
+    "deploy:1400": "npx buidler run scripts/deploy/captable-blockchangers.ts --network sandaker",
+    "deploy:blockchangers": "npx buidler run scripts/deploy/captable-blockchangers.ts --network sandaker",
+    "remix": "remixd -s . --remix-ide https://remix.ethereum.org"
   },
   "keywords": [
     "erc1400",

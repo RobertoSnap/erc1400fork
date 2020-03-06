@@ -54,12 +54,17 @@ contract ERC1400ERC20 is IERC20, ERC1400 {
             defaultPartitions
         )
     {
+        console.log("GAS used 1: %s", gasleft());
+        console.log("Done with constrcuting");
         ERC1820Client.setInterfaceImplementation(
             ERC20_INTERFACE_NAME,
             address(this)
         );
+        console.log("Done with setInterfaceImplementation");
 
         ERC1820Implementer._setInterface(ERC20_INTERFACE_NAME); // For migration
+        console.log("Done with ERC1400ERC20");
+        console.log("GAS used 3: %s", gasleft());
     }
 
     /**

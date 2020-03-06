@@ -1,4 +1,5 @@
 pragma solidity ^0.5.3;
+import "@nomiclabs/buidler/console.sol";
 
 contract CertificateControllerMock {
     // If set to 'true', the certificate control is activated
@@ -13,8 +14,10 @@ contract CertificateControllerMock {
     event Checked(address sender);
 
     constructor(address _certificateSigner, bool activated) public {
+        console.log("GAS used Cert: %s", gasleft());
         _setCertificateSigner(_certificateSigner, true);
         _certificateControllerActivated = activated;
+        console.log("Done with contsructor");
     }
 
     /**
@@ -60,6 +63,7 @@ contract CertificateControllerMock {
    * @param authorized 'true' if operator shall be accepted as certificate signer, 'false' if not.
    */
     function _setCertificateSigner(address operator, bool authorized) internal {
+        console.log("Running _setCertificateSigner");
         require(operator != address(0)); // Action Blocked - Not a valid address
         _certificateSigners[operator] = authorized;
     }

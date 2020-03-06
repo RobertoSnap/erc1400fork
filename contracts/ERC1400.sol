@@ -73,6 +73,7 @@ contract ERC1400 is IERC1400, ERC1400Partition, MinterRole {
             defaultPartitions
         )
     {
+        console.log("GAS used 2: %s", gasleft());
         ERC1820Client.setInterfaceImplementation(
             ERC1400_INTERFACE_NAME,
             address(this)
