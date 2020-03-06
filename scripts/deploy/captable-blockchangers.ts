@@ -2,26 +2,29 @@ import { ethers } from "@nomiclabs/buidler";
 
 async function main() {
   // console.log("Remember to first deploy erc1820 and set address in ERC1820Client")
-  const factory = await ethers.getContract("ERC1400ERC20");
 
   await erc1820();
   const signer = await ethers.getSigners();
   const address = await signer[0].getAddress();
   console.log("ADDRESS #####", address);
-  // If we had constructor arguments, they would be passed into deploy()
+
+  const factory = await ethers.getContract("ERC1400ERC20");
+  /*    string memory name,
+        string memory symbol,
+        uint256 granularity,
+        address[] memory controllers,
+        address certificateSigner,
+        bool certificateActivated,
+        bytes32[] memory defaultPartitions
+  */
   let contract = await factory.deploy(
     "Blockchangers AS",
-    "BCH",
+    "BLOCK",
     1,
-    ["0xc783df8a850f42e7f7e57013759c285caa701eb6"],
-    address,
+    ["0xFa48Bd6EaA82759ffBe8b25439c5E8f65E4CdF21"],
+    "0xe31C41f0f70C5ff39f73B4B94bcCD767b3071630",
     false,
-    ["0x4100000000000000000000000000000000000000000000000000000000000000"],
-    {
-      gasLimit: 5000000000,
-      // The price (in wei) per unit of gas
-      gasPrice: ethers.utils.parseUnits("0.0", "gwei")
-    }
+    ["0x4100000000000000000000000000000000000000000000000000000000000000"]
   );
 
   // The address the Contract WILL have once mined

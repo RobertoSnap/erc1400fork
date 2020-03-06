@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.5;
 
 contract ERC1820Implementer {
     bytes32 constant ERC1820_ACCEPT_MAGIC = keccak256(

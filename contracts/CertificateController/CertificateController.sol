@@ -6,6 +6,9 @@ contract CertificateController is CertificateControllerMock {
     constructor(address _certificateSigner, bool activated)
         public
         CertificateControllerMock(_certificateSigner, activated)
-    {}
+    {
+        console.log("CertificateController::constructor %s", gasleft());
+
+    }
 
 }

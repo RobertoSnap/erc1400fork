@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.5;
 import "../token/ERC1400Partition/ERC1400Partition.sol";
 
 contract ERC1400PartitionMock is ERC1400Partition {

@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.5;
 
 // MOCK CONTRACT TO REACH FULL COVERAGE BY CALLING "onlyNotBlacklisted" MODIFIER
 

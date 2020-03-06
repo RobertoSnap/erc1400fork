@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.5;
 import "../token/ERC1400Raw/ERC1400RawIssuable.sol";
 
 contract ERC1400RawMock is ERC1400RawIssuable {

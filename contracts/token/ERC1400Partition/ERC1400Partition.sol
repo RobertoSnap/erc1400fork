@@ -2,7 +2,7 @@
  * This code has not been reviewed.
  * Do not use or deploy this code before reviewing it personally first.
  */
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.5;
 
 import "./IERC1400Partition.sol";
 import "../ERC1400Raw/ERC1400Raw.sol";

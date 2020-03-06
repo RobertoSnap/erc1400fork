@@ -29,12 +29,12 @@ const config: BuidlerConfig = {
     }
   },
   solc: {
-    version: "0.5.3",
-    // optimizer: {
-    //   enabled: true,
-    //   runs: 200
-    // },
-    evmVersion: "byzantium"
+    version: "0.5.5",
+    optimizer: {
+      enabled: true,
+      runs: 200
+    }
+    // evmVersion: "byzantium"
   },
   typechain: {
     outDir: "dist/types",

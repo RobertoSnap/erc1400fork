@@ -2,7 +2,7 @@
  * This code has not been reviewed.
  * Do not use or deploy this code before reviewing it personally first.
  */
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.5;
 
 import "@openzeppelin/contracts/access/roles/MinterRole.sol";
 
@@ -73,7 +73,7 @@ contract ERC1400 is IERC1400, ERC1400Partition, MinterRole {
             defaultPartitions
         )
     {
-        console.log("GAS used 2: %s", gasleft());
+        console.log("ERC1400::constuctor::START %s", gasleft());
         ERC1820Client.setInterfaceImplementation(
             ERC1400_INTERFACE_NAME,
             address(this)
@@ -82,6 +82,7 @@ contract ERC1400 is IERC1400, ERC1400Partition, MinterRole {
         _isIssuable = true;
 
         ERC1820Implementer._setInterface(ERC1400_INTERFACE_NAME); // For migration
+        console.log("ERC1400::constuctor::END %s", gasleft());
     }
 
     /********************** ERC1400 EXTERNAL FUNCTIONS **************************/
